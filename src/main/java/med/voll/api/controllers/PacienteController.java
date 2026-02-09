@@ -32,7 +32,7 @@ public class PacienteController {
 	@Autowired
 	private PacienteRepository repository;
 	
-	@GetMapping("{/id}")
+	@GetMapping("/{id}")
 	public ResponseEntity detalhar(@PathVariable Long id) {
 		var paciente = repository.getReferenceById(id);
 		return ResponseEntity.ok(new DetalhamentoPacienteDTO(paciente));
@@ -61,7 +61,7 @@ public class PacienteController {
 		
 	}
 	
-	@DeleteMapping("{/id}")
+	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity deletar(@PathVariable Long id) {
 		var paciente = repository.getReferenceById(id);
