@@ -13,7 +13,7 @@ public class TratamentoErrosHandlers {
 	
 	@ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity tratarErro404() {
-        return ResponseEntity.notFound().build();
+		return ResponseEntity.notFound().build();
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
